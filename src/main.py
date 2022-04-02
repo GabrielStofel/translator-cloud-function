@@ -3,8 +3,7 @@ from api.cloud_translation import CloudTranslator
 
 
 def run(request: Request) -> Response:
-    request_json = request.get_json()
-    text, target_language = get_data_from(request_json)
+    text, target_language = get_data_from(request)
 
     cloud_translator = CloudTranslator()
     detected_language, translated_text = cloud_translator.translate(text, target_language)
