@@ -6,7 +6,8 @@ logger = logging.getLogger()
 
 
 class CloudTranslator:
-    translate_client = translate_v2.Client()
+    def __init__(self):
+        self.translate_client = translate_v2.Client()
 
     def translate(self, text, target) -> tuple[str, str]:
         if isinstance(text, six.binary_type):
