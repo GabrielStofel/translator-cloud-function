@@ -10,7 +10,7 @@ class TestCloudTranslation(unittest.TestCase):
         client_mock = Mock()
         client_mock.translate.return_value = {
             "detectedSourceLanguage": "pt",
-            "translatedText": "test"
+            "translatedText": "test",
         }
         translate_v2_mock.Client.return_value = client_mock
         output = CloudTranslator().translate("teste", "en")
